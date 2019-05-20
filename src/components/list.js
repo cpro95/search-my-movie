@@ -40,6 +40,7 @@ const List = () => {
           className="input"
           type="text"
           value={search}
+          autoFocus
           onChange={handleChange}
           placeholder="Search Movies..."
         />
