@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ReactComponent as Logo } from './logo.svg';
 
 const Header = () => {
   const [navBarToggle, setnavBarToggle] = useState(false);
@@ -9,15 +10,7 @@ const Header = () => {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">
-              <img
-                src="/icons.png"
-                alt="Logo"
-                style={{
-
-                    maxWidth: '100%',
-                    maxHeight: "24px"
-                }}
-              />
+              <Logo height='90px' width='100%' alt='Search My Movie' />
             </a>
 
             <a
