@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import * as moviesDB from '../movies-data.json';
+import React, { useState } from "react";
+import * as moviesDB from "../movies-data.json";
+import Header from "./header";
+import { Link } from "react-router-dom";
 
 const List = () => {
   // console.log(moviesDB.default);
   let totalMovies = moviesDB.default;
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [movies, setMovies] = useState(totalMovies);
 
   const handleChange = e => {
@@ -15,7 +17,7 @@ const List = () => {
         return true;
       else return false;
     });
-    if (e.target.value.trim() !== '') setMovies(filteredMovies);
+    if (e.target.value.trim() !== "") setMovies(filteredMovies);
     else setMovies(totalMovies);
   };
 
@@ -35,6 +37,7 @@ const List = () => {
 
   return (
     <section>
+      <Header />
       <div className="control">
         <input
           className="input"
@@ -58,9 +61,36 @@ const List = () => {
         <tbody>
           {movies.map(movie => (
             <tr key={movie.idMovie}>
-              <td>{movie.idMovie}</td>
-              <td>{movie.c00}</td>
-              <td>{movie.strPath}</td>
+              <td>
+                <Link
+                  to={{
+                    pathname: `/${movie.idMovie}`,
+                    state: movie
+                  }}
+                >
+                  {movie.idMovie}
+                </Link>
+              </td>
+              <td>
+                <Link
+                  to={{
+                    pathname: `/${movie.idMovie}`,
+                    state: movie
+                  }}
+                >
+                  {movie.c00}
+                </Link>
+              </td>
+              <td>
+                <Link
+                  to={{
+                    pathname: `/${movie.idMovie}`,
+                    state: movie
+                  }}
+                >
+                  {movie.strPath}
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

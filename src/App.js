@@ -1,14 +1,12 @@
 import React from "react";
 import "./App.css";
-import Header from './components/header';
-import List from './components/list';
+import Main from './components/main';
 
 function App() {
   return (
     <>
     <section>
-      <Header />
-      <List />
+      <Main />
     </section>
     </>
   );
