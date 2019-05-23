@@ -53,9 +53,10 @@ const List = () => {
       <table className="table is-striped is-hoverable">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>No</th>
             <th>Name</th>
-            <th>Location</th>
+            {/* <th>Detail</th> */}
+            <th>Rating / Premiered</th>
           </tr>
         </thead>
         <tbody>
@@ -81,6 +82,16 @@ const List = () => {
                   {movie.c00}
                 </Link>
               </td>
+              {/* <td>
+                <Link
+                  to={{
+                    pathname: `/${movie.idMovie}`,
+                    state: movie
+                  }}
+                >
+                  {movie.c03}
+                </Link>
+              </td> */}
               <td>
                 <Link
                   to={{
@@ -88,7 +99,7 @@ const List = () => {
                     state: movie
                   }}
                 >
-                  {movie.strPath}
+                  {movie.rating} / {movie.premiered}
                 </Link>
               </td>
             </tr>

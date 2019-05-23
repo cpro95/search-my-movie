@@ -37,9 +37,15 @@ const Detail = props => {
           <div className="content">
             <p className="title is-2">{title}</p>
             <p className="subtitle is-4">{detailData.c03}</p>
+            <p className="subtitle is-6">
+              <span className="tag is-info">Rating: {detailData.rating}</span>
+              <span className="tag is-dark">
+                / premiered: {detailData.premiered}
+              </span>
+            </p>
           </div>
 
-          <div className="content has-text-left">{detailData.c01}</div>
+          <div className="content has-text-centered">{detailData.c01}</div>
           <a className="button is-primary" href={youtube_link}>
             View Trailer
           </a>
@@ -49,6 +55,10 @@ const Detail = props => {
           >
             Learn More
           </a>
+          <p className="subtitle is-6">
+            <span className="tag is-warning">My Location</span>
+             {detailData.strPath}
+          </p>
         </div>
       </div>
     </section>

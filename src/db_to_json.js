@@ -66,7 +66,7 @@ const test_db = options => {
       }
 
       if (item === 'all') {
-        sql += `select * from movie_view`;
+        sql += `select idMovie, c00, c01, c03, c08, c16, c19, c20, premiered, strPath,rating, uniqueid_value from movie_view order by premiered desc`;
       }
 
       if (item === 'id') {
