@@ -26,39 +26,48 @@ const Detail = props => {
   return (
     <section>
       <Navbar />
-
-      <div className="card has-text-centered">
-        <div className="card-image">
-          {/* <figure className="image is-3by5"> */}
-          <img style={{ width: "360px" }} src={detailData.c08} alt="Poster" />
-          {/* </figure> */}
-        </div>
-        <div className="card-content">
-          <div className="content">
-            <p className="title is-2">{title}</p>
-            <p className="subtitle is-4">{detailData.c03}</p>
-            <p className="subtitle is-6">
-              <span className="tag is-info">Rating: {detailData.rating}</span>
-              <span className="tag is-dark">
-                / premiered: {detailData.premiered}
-              </span>
+      <div
+        className="container-fluid"
+        style={{
+          background: "black",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundImage: "url(" + detailData.c20 + ")"
+        }}
+      >
+        <div className="text-light">
+          <img
+            style={{ marginTop: "20px", width: "22rem" }}
+            src={detailData.c08}
+            alt="Poster"
+          />
+          <br />
+          <br />
+          <div className="bg-dark">
+            <h1>{title}</h1>
+            <h4>{detailData.c03}</h4>
+            <span className="badge badge-light">
+              Rating: {detailData.rating}
+            </span>
+            {" / "}
+            <span className="badge badge-primary">
+              premiered: {detailData.premiered}
+            </span>
+            <p className="lead">{detailData.c01}</p>
+            <a className="btn btn-light btn-sm" href={youtube_link}>
+              View Trailer
+            </a>{" "}
+            <a
+              className="btn btn-primary btn-sm"
+              href={`http://www.imdb.com/title/${detailData.uniqueid_value}`}
+            >
+              Learn More
+            </a>
+            <p className="text-success">
+              <span className="badge badge-warning">Location</span>
+              {detailData.strPath}
             </p>
           </div>
-
-          <div className="content has-text-centered">{detailData.c01}</div>
-          <a className="button is-primary" href={youtube_link}>
-            View Trailer
-          </a>
-          <a
-            className="button is-info"
-            href={`http://www.imdb.com/title/${detailData.uniqueid_value}`}
-          >
-            Learn More
-          </a>
-          <p className="subtitle is-6">
-            <span className="tag is-warning">My Location</span>
-             {detailData.strPath}
-          </p>
         </div>
       </div>
     </section>

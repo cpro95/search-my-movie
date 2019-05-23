@@ -38,31 +38,31 @@ const List = () => {
   return (
     <section>
       <Header />
-      <div className="control">
+      <div class="input-group input-group-sm mb-3">
         <input
-          className="input"
           type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm"
           value={search}
           autoFocus
           onChange={handleChange}
           placeholder="Search Movies..."
         />
       </div>
-      <br />
-      <h2 className="subtitle">Search count : {movies.length}</h2>
-      <table className="table is-striped is-hoverable">
-        <thead>
+      <h2 className="h5">Search count : {movies.length}</h2>
+      <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
-            <th>No</th>
-            <th>Name</th>
-            {/* <th>Detail</th> */}
-            <th>Rating / Premiered</th>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Rating / Premiered</th>
           </tr>
         </thead>
         <tbody>
           {movies.map(movie => (
             <tr key={movie.idMovie}>
-              <td>
+              <th scope="row">
                 <Link
                   to={{
                     pathname: `/${movie.idMovie}`,
@@ -71,7 +71,7 @@ const List = () => {
                 >
                   {movie.idMovie}
                 </Link>
-              </td>
+              </th>
               <td>
                 <Link
                   to={{
@@ -82,16 +82,6 @@ const List = () => {
                   {movie.c00}
                 </Link>
               </td>
-              {/* <td>
-                <Link
-                  to={{
-                    pathname: `/${movie.idMovie}`,
-                    state: movie
-                  }}
-                >
-                  {movie.c03}
-                </Link>
-              </td> */}
               <td>
                 <Link
                   to={{
@@ -99,7 +89,11 @@ const List = () => {
                     state: movie
                   }}
                 >
-                  {movie.rating} / {movie.premiered}
+                  <span className="badge badge-dark">{movie.rating}</span>
+                  {" / "}
+                  <span className="badge badge-secondary">
+                    {movie.premiered}
+                  </span>
                 </Link>
               </td>
             </tr>

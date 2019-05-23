@@ -5,7 +5,7 @@ import Main from './components/main';
 function App() {
   return (
     <>
-    <section>
+    <section className="container-fluid">
       <Main />
     </section>
     </>
