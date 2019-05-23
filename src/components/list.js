@@ -89,7 +89,7 @@ const List = () => {
                     state: movie
                   }}
                 >
-                  <span className="badge badge-dark">{movie.rating}</span>
+                  <span className="badge badge-dark">{parseFloat(movie.rating).toFixed(1)}</span>
                   {" / "}
                   <span className="badge badge-secondary">
                     {movie.premiered}

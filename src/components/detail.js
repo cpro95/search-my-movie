@@ -47,7 +47,7 @@ const Detail = props => {
             <h1>{title}</h1>
             <h4>{detailData.c03}</h4>
             <span className="badge badge-light">
-              Rating: {detailData.rating}
+              Rating: {parseFloat(detailData.rating).toFixed(1)}
             </span>
             {" / "}
             <span className="badge badge-primary">
