@@ -20,7 +20,7 @@ const Header = () => {
         <div className="container">
           <Logo style={{ height: "90px", width: "120px" }} />
           <h1 className="display-4 text-white">Search My Movie</h1>
-          <p className="lead text-white">out of Kodi DB</p>
+          <p className="lead text-white">inside of my Kodi DB</p>
         </div>
       </div>
     </section>

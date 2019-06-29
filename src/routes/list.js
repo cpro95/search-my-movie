@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import * as moviesDB from "../movies-data.json";
-import Header from "./header";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import * as moviesDB from '../movies-data.json';
+import Header from '../components/header';
+import { Link } from 'react-router-dom';
 
 const List = () => {
-  // console.log(moviesDB.default);
   let totalMovies = moviesDB.default;
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [movies, setMovies] = useState(totalMovies);
 
   const handleChange = e => {
@@ -17,7 +16,7 @@ const List = () => {
         return true;
       else return false;
     });
-    if (e.target.value.trim() !== "") setMovies(filteredMovies);
+    if (e.target.value.trim() !== '') setMovies(filteredMovies);
     else setMovies(totalMovies);
   };
 
@@ -38,10 +37,10 @@ const List = () => {
   return (
     <section>
       <Header />
-      <div class="input-group input-group-sm mb-3">
+      <div className="input-group input-group-sm mb-3">
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-sm"
           value={search}
@@ -50,7 +49,7 @@ const List = () => {
           placeholder="Search Movies..."
         />
       </div>
-      <h2 className="h5">Search count : {movies.length}</h2>
+      <h2 className="h5">Total : {movies.length}</h2>
       <table className="table table-striped">
         <thead className="thead-dark">
           <tr>
@@ -89,8 +88,10 @@ const List = () => {
                     state: movie
                   }}
                 >
-                  <span className="badge badge-dark">{parseFloat(movie.rating).toFixed(1)}</span>
-                  {" / "}
+                  <span className="badge badge-dark">
+                    {parseFloat(movie.rating).toFixed(1)}
+                  </span>
+                  {' / '}
                   <span className="badge badge-secondary">
                     {movie.premiered}
                   </span>
